@@ -9,7 +9,7 @@ int main(int argc, char *argv[]) {
   const char *command = argv[1];
 
   if (strcmp(command, "init") == 0) {
-    return cmd_init(argc - 1, &argv[1]);
+    printf("%s", (cmd_init() ? "lmao failed" : "wtf it worked?!"));
   } else if (strcmp(command, "add") == 0) {
     return cmd_add(argc - 1, &argv[1]);
   } else if (strcmp(command, "commit") == 0) {

@@ -4,7 +4,7 @@
 #include <errno.h>
 
 int make_dir(const char *path) {
-  if (mkdir(path, 0755) == -1) {
+  if (mkdir(path, 0777) == -1) {
     if (errno == EEXIST) return 0;
     perror(path);
     return -1;
@@ -24,23 +24,23 @@ int write_file(const char *path, const char *content) {
   return 0;
 }
 
-int cmd_init(int argc, char *argv[]) {
+int cmd_init() {
   const char *gitdir = ".gift";
 
   if (make_dir(gitdir) < 0) return 1;
 
   const char *dirs[] = {
-    ".mygit/objects",
-    ".mygit/objects/info",
-    ".mygit/objects/pack",
-    ".mygit/refs",
-    ".mygit/refs/heads",
-    ".mygit/refs/tags",
-    ".mygit/hooks",
-    ".mygit/info"
+    ".gift/objects",
+    ".gift/objects/info",
+    ".gift/objects/pack",
+    ".gift/refs",
+    ".gift/refs/heads",
+    ".gift/refs/tags",
+    ".gift/hooks",
+    ".gift/info"
   };
 
-  for (int i = 0; i < sizeof(dirs) /  sizeof(dirs[0]); i++) {
+  for (int i = 0; i < 8; i++) {
     if (make_dir(dirs[i]) < 0) return 1;
   }
 

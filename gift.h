@@ -6,13 +6,13 @@
 #ifndef GIFT_H
 #define GIFT_H
 
-int cmd_init(int argc, char *argv[]);
+int cmd_init();
 int cmd_add(int argc, char *argv[]);
 int cmd_commit(int argc, char *argv[]);
 int cmd_log(int argc, char *argv[]);
 
 void print_help() {
-    printf("Usage: mygit <command> [options]\n");
+    printf("Usage: ./gift <command> [options]\n");
     printf("Commands:\n");
     printf("  init       Initialize a new repository\n");
     printf("  add        Add file contents to the index\n");
