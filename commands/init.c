@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <sys/stat.h>
-#include <errno.h>
+#include "../gift.h"
 
 int make_dir(const char *path) {
   if (mkdir(path, 0777) == -1) {

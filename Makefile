@@ -1,7 +1,7 @@
 # --- Compiler settings ---
 CC      := gcc
 CFLAGS  := -Wall -Wextra -Iinclude
-LDFLAGS := 
+LDFLAGS := -lssl -lcrypto
 
 # --- Project structure ---
 SRC_DIR := commands
@@ -9,7 +9,7 @@ OBJ_DIR := build
 BIN     := gift
 
 # --- Source files ---
-SRCS := gift.c $(wildcard $(SRC_DIR)/*.c)
+SRCS := gift.c helper.c $(wildcard $(SRC_DIR)/*.c)
 OBJS := $(patsubst %.c, $(OBJ_DIR)/%.o, $(SRCS))
 
 # --- Default target ---
