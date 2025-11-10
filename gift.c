@@ -7,7 +7,7 @@ int main(int argc, char *argv[]) {
   }
 
   const char *command = argv[1];
-  // lmao arihant ko neovim nahi aata
+  // lmao
   if (strcmp(command, "init") == 0) {
     printf("%s", (cmd_init() ? "lmao failed" : "wtf it worked?!"));
   } else if (strcmp(command, "add") == 0) {
